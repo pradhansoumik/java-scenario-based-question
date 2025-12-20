@@ -19,12 +19,21 @@ public class LinkedHashMapMain {
         map.put("12th","Hey Kocho");
         map.put("12th","Hey Kocho updated");
 
-        System.out.println("1. INSERTION ORDER TEST : "+map);
+        //System.out.println("1. INSERTION ORDER TEST : "+map);
+        System.out.println("INSERTION ORDER IS PRESERVED IN LINKED HASH MAP");
 
         /*for(Map.Entry<String, String > singleMap: map.entrySet()){
             System.out.println("Printing through for loop: "+singleMap.getValue());
         }*/
 
+        /**
+         * it maintains access order - means
+         * (most recently accessed entries move to the end). This is often used for LRU caches.
+         *
+         * It’s about recency of access, not frequency. not the order in which they were added.
+         * An LRU cache removes the least recently used element when the cache is full,
+         * keeping the most recently accessed elements available.
+         */
         LinkedHashMap<Integer, String> map1 =
                 new LinkedHashMap<>(16, 0.75f, true); // true = access order
 
